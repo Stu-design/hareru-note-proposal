@@ -1,0 +1,644 @@
+<!doctype html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ハレルノートスクール Webサイト制作企画書</title>
+<meta name="description" content="ハレルノートスクール公式Webサイトの制作企画書">
+<style>
+:root{--blue:#00aaff;--navy:#17324d;--text:#263442;--muted:#667788;--pale:#eaf7ff;--line:#d9e7ef;--paper:#fff}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;background:#eef4f7;color:var(--text);font-family:-apple-system,BlinkMacSystemFont,"Hiragino Sans","Yu Gothic",Meiryo,sans-serif;line-height:1.85}
+.shell{max-width:1060px;margin:32px auto;background:var(--paper);box-shadow:0 18px 55px rgba(23,50,77,.12);border-radius:22px;overflow:hidden}
+.accent{height:8px;background:linear-gradient(90deg,var(--blue),#68d8ff 65%,#d8f5ff)}
+main{padding:64px 76px 80px}
+main>p:first-child{text-align:center;margin:10px 0 34px}
+main>p:first-child img{width:230px;max-width:55%;height:auto}
+h1{font-size:clamp(2rem,5vw,3.35rem);line-height:1.25;text-align:center;color:var(--navy);letter-spacing:.02em;margin:0 0 18px}
+h1+p{font-size:1.05rem}
+h2{font-size:1.65rem;line-height:1.45;color:var(--navy);margin:72px 0 22px;padding-top:8px;border-top:1px solid var(--line)}
+h2::before{content:"";display:block;width:48px;height:5px;border-radius:5px;background:var(--blue);margin:-11px 0 20px}
+h3{font-size:1.18rem;color:var(--navy);margin:34px 0 12px}
+p{margin:0 0 16px}
+a{color:#007cc2;text-decoration-thickness:1px;text-underline-offset:3px}
+strong{color:var(--navy)}
+blockquote{margin:24px 0;padding:20px 24px;border-left:5px solid var(--blue);background:var(--pale);border-radius:0 12px 12px 0;color:var(--navy);font-size:1.05rem}
+blockquote p{margin:0}
+hr{border:0;border-top:1px solid var(--line);margin:42px 0}
+ul,ol{padding-left:1.5rem;margin:0 0 20px}
+li{margin:.32rem 0}
+table{width:100%;border-collapse:separate;border-spacing:0;margin:22px 0 30px;font-size:.94rem;border:1px solid var(--line);border-radius:12px;overflow:hidden}
+th,td{text-align:left;vertical-align:top;padding:13px 15px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+th:last-child,td:last-child{border-right:0}
+tr:last-child td{border-bottom:0}
+th{background:var(--navy);color:#fff;font-weight:700}
+tbody tr:nth-child(even){background:#f7fbfd}
+img{max-width:100%;height:auto;border-radius:14px}
+main>p img[alt="ハレルノート記入面"]{display:block;max-width:540px;margin:26px auto;border:1px solid var(--line);box-shadow:0 12px 30px rgba(23,50,77,.1)}
+main>p img[alt="ロゴマークを使用した背景"]{display:block;width:100%;max-height:330px;object-fit:cover;margin:26px auto;border:1px solid var(--line)}
+code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;padding:.15em .4em;border-radius:5px}
+.meta{text-align:center;color:var(--muted)}
+.backtop{position:fixed;right:22px;bottom:22px;width:44px;height:44px;border-radius:50%;display:grid;place-items:center;background:var(--navy);color:#fff;text-decoration:none;box-shadow:0 8px 20px rgba(23,50,77,.25)}
+@media(max-width:760px){.shell{margin:0;border-radius:0;box-shadow:none}.accent{height:6px}main{padding:42px 20px 64px}h2{margin-top:56px}table{display:block;overflow-x:auto;white-space:normal}th,td{min-width:150px;padding:11px 12px}.backtop{right:14px;bottom:14px}}
+@media print{body{background:#fff}.shell{margin:0;max-width:none;box-shadow:none;border-radius:0}.accent,.backtop{display:none}main{padding:18mm}h2{break-after:avoid;page-break-after:avoid}table,img,blockquote{break-inside:avoid;page-break-inside:avoid}a{color:inherit;text-decoration:none}}
+</style>
+</head>
+<body id="top">
+<div class="shell"><div class="accent"></div><main><p><img src="assets/logo.png" alt="ハレルノートスクール"></p>
+<h1>ハレルノートスクール Webサイト制作企画書</h1>
+<blockquote>
+<p>「自分で学べる力」と、教室の温度が伝わる公式サイトへ。</p>
+</blockquote>
+<p><strong>文書区分：</strong> 更新版 v1.1<br><strong>作成日：</strong> 2026年9月2日</p>
+<hr>
+<h2>1. 企画概要</h2>
+<p>熊本市中央区神水の学習塾「ハレルノートスクール」の公式Webサイトを新規制作する。</p>
+<p>現在はInstagramを中心に情報発信しているため、塾の特徴、指導内容、コース、料金、講師、教室情報が投稿ごとに分散している。初めて塾を知る保護者にとっても、短時間で全体像を理解でき、安心して相談できる公式の情報拠点をつくる。</p>
+<h3>今回の中心提案</h3>
+<p>合格実績の量を前面に出すのではなく、以下の価値を中心に伝える。</p>
+<ul>
+<li>経験豊富な講師3名による直接指導</li>
+<li>集団授業と自律学習指導を組み合わせた仕組み</li>
+<li>各学年1クラスの定員制</li>
+<li>生徒、保護者、講師をつなぐ「ハレルノート」</li>
+<li>地域の学校生活や部活動も踏まえた丁寧な伴走</li>
+</ul>
+<h2>2. Webサイトの目的</h2>
+<table>
+<thead>
+<tr>
+<th>目的</th>
+<th>現状の課題</th>
+<th>Webサイトでの対応</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>信頼をつくる</td>
+<td>公式情報がInstagram中心で、初見では全体像を把握しにくい</td>
+<td>基本情報、講師、指導方針、教室写真を一か所に集約する</td>
+</tr>
+<tr>
+<td>違いを伝える</td>
+<td>集団塾・個別塾との違いが説明なしでは伝わりにくい</td>
+<td>指導の流れと自律学習の仕組みを短い図解で見せる</td>
+</tr>
+<tr>
+<td>コースを理解してもらう</td>
+<td>学年や教科によって授業形式が異なる</td>
+<td>4つのコースに整理し、中1・2の2教科／5教科を比較表示する</td>
+</tr>
+<tr>
+<td>相談につなげる</td>
+<td>投稿閲覧から問い合わせまでの導線が分散している</td>
+<td>LINEを第1導線、電話を第2導線として常に見つけやすくする</td>
+</tr>
+</tbody></table>
+<h3>制作方針</h3>
+<ul>
+<li>スマートフォンを最優先に設計する</li>
+<li>1画面につき1つの要点を基本とし、長文を避ける</li>
+<li>Instagramは日々の発信、Webサイトは変わりにくい基礎情報と役割を分ける</li>
+<li>休校日や残席など、変動する情報を簡単に更新できる形にする</li>
+<li>未確定情報を推測で公開せず、確認待ちとして管理する</li>
+</ul>
+<h2>3. ブランドと訴求の軸</h2>
+<h3>塾名に込められた思い</h3>
+<p>塾名の出発点は、ジャズで使われる「ブルーノートスケール」。音階にない音を取り入れた独特の響きのように、通う子どもたち一人ひとりにも、誰かと同じではないオリジナルな人生を歩んでほしいという願いが込められている。</p>
+<p>切ない響きではなく、明るく晴れやかな響きを表現するため、「晴れる音」から「ハレルノオト」、そして「ハレルノートスクール」と名付けられた。</p>
+<h3>ブランドの核</h3>
+<blockquote>
+<p>成績を上げる場所だけではなく、学ぶ方法を身につけ、自分で考え、自分で決めて進めるようになる場所。</p>
+</blockquote>
+<h3>伝えるべき強み</h3>
+<ol>
+<li>指導歴14～21年の講師3名が直接指導</li>
+<li>集団授業の熱量と、自律学習指導の丁寧さを両立</li>
+<li>各学年1クラスの完全定員制</li>
+<li>後日チェックテストで「分かったつもり」を防ぐ</li>
+<li>ハレルノートを通じた生徒・保護者・講師の連携</li>
+</ol>
+<h3>キャッチコピー案</h3>
+<ul>
+<li><strong>第一案：</strong> 学ぶ力が育てば、未来はもっと晴れていく。</li>
+<li><strong>第二案：</strong> 教わるだけで終わらない。自分で学べる子を育てる塾。</li>
+<li><strong>説明文案：</strong> 集団授業の熱量と、一人ひとりへの丁寧な伴走を。</li>
+</ul>
+<h3>教育方針（打ち合わせ音声から整理）</h3>
+<blockquote>
+<p>私たちが育てたいのは、教えてもらったときだけ解ける子ではなく、自分で目標を決め、準備し、試し、振り返り、次の行動を選べる子です。授業や動画を受け身で終わらせず、講師との対話やチェックテスト、ハレルノートを通して、一人ひとりの「学ぶ力」と「自己決定力」を育てます。</p>
+</blockquote>
+<p>教育方針は、次の5点を軸にWebサイトへ掲載する。</p>
+<ol>
+<li><strong>学ぶ力と自己決定力を育てる</strong> — 目標と振り返りを自分の言葉で記録し、次にすることを自分で選べるようにする</li>
+<li><strong>授業を受けただけで終わらせない</strong> — 宿題で準備し、授業とは別の日のチェックテストで本当に身についたか確かめる</li>
+<li><strong>教材や動画だけに任せない</strong> — 講師が途中で問いかけ、「何を考えたか」「説明をどう捉えたか」まで確認する</li>
+<li><strong>合格校の名前より、一人ひとりの伸びを見る</strong> — 大人数の合格実績ではなく、本人がどれだけ成長したかを大切にする</li>
+<li><strong>学校生活と両立できる学び方をつくる</strong> — 部活動なども踏まえ、学ぶ時間を柔軟に設計する</li>
+</ol>
+<p>打ち合わせでは、中学3年生12名が夏期期間に250点満点の平均で約40点伸びた例も語られた。公開時は、対象年度・テスト名・母数・集計方法を確認できた数値のみ掲載する。</p>
+<p>※上記は音声の逐語録ではなく、発言内容をWeb掲載向けに編集した案。最終公開前に講師確認を行う。</p>
+<h2>4. 想定する閲覧者</h2>
+<table>
+<thead>
+<tr>
+<th>対象</th>
+<th>知りたいこと</th>
+<th>安心につながる情報</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>小学生の保護者</td>
+<td>学習習慣が身につくか、中学準備になるか</td>
+<td>個別学習の流れ、全国模試、ハレルノート</td>
+</tr>
+<tr>
+<td>中学1・2年生の保護者</td>
+<td>2教科と5教科の違い、部活との両立</td>
+<td>比較表、時間の使い方、自律学習の進捗管理</td>
+</tr>
+<tr>
+<td>中学3年生の保護者・生徒</td>
+<td>受験に向けた対応範囲、年間の流れ</td>
+<td>5教科指導、入試特訓、模試、季節講習</td>
+</tr>
+<tr>
+<td>高校生・保護者</td>
+<td>自習だけとの違い、質問対応</td>
+<td>定期面談、学習計画、数学・物理の個人授業</td>
+</tr>
+</tbody></table>
+<p>保護者が探す順番を想定し、<strong>特徴 → コース → 料金 → 講師 → 教室 → よくある質問 → アクセス → LINE相談</strong>の順で情報を整理する。</p>
+<h2>5. コース構成</h2>
+<p>Webサイトでは次の4区分を基本とする。</p>
+<table>
+<thead>
+<tr>
+<th>コース</th>
+<th>対象・形式</th>
+<th>教科・内容</th>
+<th>見せ方の要点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>小学生</td>
+<td>小学4～6年生・個別学習</td>
+<td>算数・国語・英語から選択</td>
+<td>学習の型と中学準備を伝える</td>
+</tr>
+<tr>
+<td>中学1・2年生</td>
+<td>集団授業＋自律学習</td>
+<td>2教科または5教科</td>
+<td>2教科／5教科を比較表示する</td>
+</tr>
+<tr>
+<td>中学3年生</td>
+<td>集団授業＋自律学習＋入試対策</td>
+<td>5教科</td>
+<td>年間の受験対応を時系列で見せる</td>
+</tr>
+<tr>
+<td>高校生</td>
+<td>自律学習＋定期面談</td>
+<td>必要に応じて数学・物理を追加</td>
+<td>一般的な自習室との違いを明確にする</td>
+</tr>
+</tbody></table>
+<h3>中学1・2年生：2教科と5教科</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>2教科コース</th>
+<th>5教科コース</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>教科</td>
+<td>数学・英語</td>
+<td>数学・英語・国語・理科・社会</td>
+</tr>
+<tr>
+<td>形式</td>
+<td>数学・英語の集団授業</td>
+<td>数学・英語の集団授業＋国理社の自律学習</td>
+</tr>
+<tr>
+<td>授業量</td>
+<td>週4コマ×3週間</td>
+<td>週7コマ×3週間</td>
+</tr>
+<tr>
+<td>月額授業料</td>
+<td>18,700円</td>
+<td>23,100円</td>
+</tr>
+</tbody></table>
+<blockquote>
+<p><strong>表現上の注意：</strong> 「2教科／5教科」の選択が明記されているのは中学1・2年生のみ。全コース共通の選択肢に見える表現は避ける。</p>
+</blockquote>
+<h2>6. 指導の仕組み</h2>
+<h3>数学・英語の基本サイクル</h3>
+<ol>
+<li><strong>教える：</strong> 新しい内容の要点を説明</li>
+<li><strong>自分で解く：</strong> 演習を通して理解を定着</li>
+<li><strong>別日にチェック：</strong> 授業直後ではなく、準備してテストに臨む</li>
+<li><strong>復習・再テスト：</strong> 未定着のまま残さない</li>
+</ol>
+<p>授業直後ではなく日をまたいで確認することで、「覚える → 準備する → 試す」という学習方法そのものを身につける。</p>
+<h3>国語・理科・社会の自律学習</h3>
+<ol>
+<li>3週間単位で「いつまでに、どこまで終えるか」を設定</li>
+<li>講師が進捗を確認し、必要に応じて質問対応</li>
+<li>期限内の到達が難しい場合は、別日程で呼び出し指導</li>
+</ol>
+<h3>ハレルノート</h3>
+<p><img src="assets/hareru-note.png" alt="ハレルノート記入面"></p>
+<ul>
+<li><strong>生徒：</strong> できたこと、次週の目標を記入</li>
+<li><strong>保護者：</strong> 成長を感じたことや応援メッセージを記入</li>
+<li><strong>講師：</strong> 本人・保護者へのフィードバックを記入</li>
+</ul>
+<p>専門用語を並べるのではなく、矢印図、短い説明、実物写真を使い、入塾後の学び方を想像できるようにする。</p>
+<h2>7. サイト構成案</h2>
+<p>初回公開は、次の<strong>固定5ページを必須</strong>とする。各コースの対象・指導方法・教科・料金・時間割を一つのページ内で完結させる。</p>
+<table>
+<thead>
+<tr>
+<th>必須ページ</th>
+<th>主な内容</th>
+<th>役割</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. トップページ</td>
+<td>教育方針、4コース、講師、教室・アクセス、FAQ、LINE導線</td>
+<td>全体像と信頼材料をまとめて伝える</td>
+</tr>
+<tr>
+<td>2. 小学生</td>
+<td>小4～6、指導方法、教科、料金、時間割</td>
+<td>小学生コースを判断してもらう</td>
+</tr>
+<tr>
+<td>3. 中学1・2年生</td>
+<td>2教科／5教科比較、指導サイクル、料金、時間割</td>
+<td>選択肢と両立方法を明確にする</td>
+</tr>
+<tr>
+<td>4. 中学3年生</td>
+<td>5教科、入試対策、年間の流れ、料金、時間割</td>
+<td>受験対応の全体像を伝える</td>
+</tr>
+<tr>
+<td>5. 高校生</td>
+<td>自律学習、面談、追加授業、料金</td>
+<td>一般的な自習室との違いを伝える</td>
+</tr>
+</tbody></table>
+<p>お知らせは固定ページ数に含めず、投稿の一覧・詳細ページをWordPressが自動生成する。プライバシーポリシー等の法務ページも別途設ける。教育方針は初期段階ではトップに掲載し、文章量が増える場合は「教育方針・ハレルノート」を第6ページとして独立させる。</p>
+<h2>8. トップページの構成</h2>
+<ol>
+<li><strong>ファーストビュー</strong> — 短いコピー、教室写真、LINE相談</li>
+<li><strong>この塾について</strong> — 自分で学べる力を育てるという約束</li>
+<li><strong>4つのコース</strong> — 小学生、中1・2、中3、高校生</li>
+<li><strong>指導の特徴</strong> — 教える → 学ぶ → チェック → やり直す</li>
+<li><strong>ハレルノート</strong> — 生徒・保護者・講師の連携</li>
+<li><strong>講師紹介</strong> — 3名の経歴、担当、教育観</li>
+<li><strong>教室・通塾情報</strong> — 写真、アクセス、自習、振替</li>
+<li><strong>よくある質問</strong> — よくある不安に先回り</li>
+<li><strong>LINE相談</strong> — 無料体験・個別相談への最終導線</li>
+</ol>
+<p>トップ上部に最新のお知らせを3件程度表示し、一覧・詳細へ移動できるようにする。</p>
+<h3>残席表示</h3>
+<p>学年ごとの「定員・在籍・残席」を管理画面の数字欄から更新できるようにする。更新日も自動表示し、古い数字に見えないようにする。運用負担が大きい場合は、<strong>受付中／残席わずか／要相談</strong>の3段階へ切り替えられる設計とする。</p>
+<h2>9. デザイン方針</h2>
+<blockquote>
+<p>親しみやすいが幼すぎず、塾として信頼でき、情報を探さなくてよいサイト。</p>
+</blockquote>
+<h3>ハレルノート独自の表現</h3>
+<ul>
+<li>ロゴのブルーを主色とし、白と淡い水色で明るく清潔にする</li>
+<li>「晴れる音」を感じる、軽やかなリズムと丸みを取り入れる</li>
+<li>ノートの罫線やページの重なりをごく控えめなモチーフにする</li>
+<li>ロゴマーク背景は小学生ページや区切り部分に限定して使う</li>
+<li>教室と講師の実写を中心にし、素材写真に頼りすぎない</li>
+</ul>
+<p><img src="assets/logo-pattern.png" alt="ロゴマークを使用した背景"></p>
+<h3>参考サイト</h3>
+<table>
+<thead>
+<tr>
+<th>参考サイト</th>
+<th>参考にする点</th>
+<th>距離を取る点</th>
+</tr>
+</thead>
+<tbody><tr>
+<td><a href="https://www.matsugaku.co.jp/">まつがく</a></td>
+<td>学年別の入口、特徴の整理、LINEへの明確な導線</td>
+<td>多校舎向けの情報量、合格実績中心の見せ方</td>
+</tr>
+<tr>
+<td><a href="https://tanqgakusha.jp/">探究学舎</a></td>
+<td>教育観を冒頭で伝える、写真と短文で世界観をつくる</td>
+<td>実態以上の派手な演出、動画中心の構成</td>
+</tr>
+<tr>
+<td><a href="https://www.narusemi.com/primary/">なるほどゼミナール</a></td>
+<td>小中高の分類、順番に理解できるシンプルな構成</td>
+<td>県内競合のため、配色・書体・図解・配置・コピーを踏襲しない</td>
+</tr>
+</tbody></table>
+<p>なるほどゼミナールからは「分かりやすさ」という設計原則だけを参考にし、視覚表現はハレルノートのロゴ、教室写真、塾名の物語から独自に構築する。</p>
+<h2>10. 講師・安心情報</h2>
+<h3>講師紹介</h3>
+<table>
+<thead>
+<tr>
+<th>講師</th>
+<th>経歴</th>
+<th align="right">指導歴</th>
+<th>担当科目</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>許斐 春輝</td>
+<td>熊本大学工学部卒</td>
+<td align="right">21年</td>
+<td>数学・国語</td>
+</tr>
+<tr>
+<td>宮西 孝宗</td>
+<td>鹿児島大学工学部卒</td>
+<td align="right">15年</td>
+<td>理科・英語</td>
+</tr>
+<tr>
+<td>上瀧 悠亮</td>
+<td>下関市立大学経済学部卒</td>
+<td align="right">14年</td>
+<td>社会・英語</td>
+</tr>
+</tbody></table>
+<h3>通塾後の安心材料</h3>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>内容</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>営業時間</td>
+<td>平日14:00～22:00、土曜日13:00～20:00</td>
+</tr>
+<tr>
+<td>欠席時振替</td>
+<td>あり。ただし無断欠席を除く</td>
+</tr>
+<tr>
+<td>自習室</td>
+<td>開講中は条件なしで利用可能</td>
+</tr>
+<tr>
+<td>保護者面談</td>
+<td>年3回：6月・11月・2月</td>
+</tr>
+<tr>
+<td>学習報告</td>
+<td>面談時に詳細共有。必要に応じて公式LINEから報告</td>
+</tr>
+<tr>
+<td>駐輪・駐車</td>
+<td>ともにあり。駐車場は保護者が自由に使える運用ではないため、案内文を要確認</td>
+</tr>
+</tbody></table>
+<p>合格実績は主訴求にせず、公開する場合も「成績の伸び」「学習習慣の変化」「本人・保護者の声」を中心に構成する。</p>
+<h2>11. アクセス・問い合わせ</h2>
+<table>
+<thead>
+<tr>
+<th>項目</th>
+<th>確定情報</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>所在地</td>
+<td>熊本市中央区神水1丁目17-15 光永テナント2F</td>
+</tr>
+<tr>
+<td>市電</td>
+<td>神水交差点から徒歩2分、八丁馬場から徒歩3分</td>
+</tr>
+<tr>
+<td>バス</td>
+<td>神水町から徒歩1分</td>
+</tr>
+<tr>
+<td>LINE</td>
+<td><code>@010kjkss</code>／<a href="https://lin.ee/PEZP5wl">友だち追加</a></td>
+</tr>
+<tr>
+<td>電話</td>
+<td><a href="tel:0962832100">096-283-2100</a></td>
+</tr>
+<tr>
+<td>Instagram</td>
+<td><a href="https://www.instagram.com/hareru_no_oto.school/">@hareru_no_oto.school</a></td>
+</tr>
+</tbody></table>
+<p>第1導線はLINE、第2導線は電話とする。LINEは「入塾を決めていなくても相談可能」と分かる柔らかい表現にする。</p>
+<p>Googleマップの地図表示はアクセス案内として利用できるが、<strong>Googleマップの口コミ投稿を促す導線は今回の制作範囲に含めない</strong>。</p>
+<h3>ボタン文言案</h3>
+<ul>
+<li>LINEで無料体験・相談する</li>
+<li>まずは教室について聞いてみる</li>
+<li>電話で問い合わせる</li>
+<li>Instagramで教室の日常を見る</li>
+</ul>
+<h2>12. システム・機能要件</h2>
+<h3>採用方針</h3>
+<p><strong>公開サイトと更新基盤にはWordPressを採用する方針を推奨する。</strong> デザイン検討には必要に応じてFigmaを使い、承認後にWordPressへ実装する。</p>
+<table>
+<thead>
+<tr>
+<th>選択肢</th>
+<th>役割</th>
+<th>今回の評価</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>WordPress</td>
+<td>サイト公開、記事管理、残席更新、権限管理</td>
+<td><strong>推奨。</strong> 塾側が管理画面から継続更新しやすい</td>
+</tr>
+<tr>
+<td>Figma</td>
+<td>画面デザイン、スマホ表示の確認、制作前の合意</td>
+<td>デザイン用途に有効。Figma SitesにもCMSはあるが、今回は日常運用の分かりやすさと保守の一般性を優先する</td>
+</tr>
+<tr>
+<td>独自システム</td>
+<td>個別仕様を一から開発</td>
+<td>今回は不要。費用・操作・保守が複雑になるため採用しない</td>
+</tr>
+</tbody></table>
+<p>WordPressには記事の作成・編集・分類と、運用者ごとの権限設定が標準で用意されている。固定レイアウトと専用入力欄を組み合わせ、塾側がデザインを崩さずに更新できる構成にする。</p>
+<h3>塾側で更新するもの</h3>
+<table>
+<thead>
+<tr>
+<th>更新対象</th>
+<th>操作方法</th>
+<th>必須項目</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>お知らせ・ニュース</td>
+<td>「新規追加」から入力して公開</td>
+<td>タイトル、本文、公開日、カテゴリ、任意の画像</td>
+</tr>
+<tr>
+<td>残席数</td>
+<td>学年別の数字欄を書き換えて保存</td>
+<td>定員、在籍、残席、受付状態</td>
+</tr>
+<tr>
+<td>休校日・年間予定</td>
+<td>カレンダー画像またはPDFを差し替え</td>
+<td>対象期間、更新日、添付ファイル</td>
+</tr>
+</tbody></table>
+<p>お知らせカテゴリは、初期値として「お知らせ」「募集状況」「講習」「休校・日程」を設定する。コメント機能は使わない。</p>
+<h3>必須機能</h3>
+<ul>
+<li>5つの固定ページと、お知らせ一覧・詳細</li>
+<li>トップページへの最新ニュース自動表示</li>
+<li>学年別残席表示と更新日表示</li>
+<li>LINEを第1、電話を第2とする問い合わせ導線</li>
+<li>Instagramリンク、アクセス地図、営業時間表示</li>
+<li>スマートフォン対応、基本的な検索対策、SNS共有時の表示設定</li>
+<li>バックアップ、セキュリティ更新、迷惑アクセス対策</li>
+<li>管理者と更新担当者の権限分離</li>
+</ul>
+<h3>更新画面の設計原則</h3>
+<ul>
+<li>日常更新に不要なメニューは更新担当者から隠す</li>
+<li>ページを自由配置する方式ではなく、決められた入力欄へ文章・数字・画像を入れる方式にする</li>
+<li>公開前プレビューと下書き保存を使えるようにする</li>
+<li>納品時に、画像付きの簡易操作マニュアルと更新練習を用意する</li>
+<li>WordPress本体・テーマ・プラグインの保守担当と費用は、公開前に決める</li>
+</ul>
+<blockquote>
+<p>参考：<a href="https://wordpress.org/documentation/article/posts-screen/">WordPress公式「投稿管理」</a>では投稿の作成・編集・分類、<a href="https://wordpress.org/documentation/article/roles-and-capabilities/">WordPress公式「権限」</a>では管理者・編集者などの役割分けが案内されている。<a href="https://help.figma.com/hc/en-us/articles/35995403973783-Guide-to-Figma-Sites-CMS">Figma公式「Sites CMS」</a>にも記事管理機能はあるが、<a href="https://help.figma.com/hc/en-us/articles/31242845959703-Publish-update-or-unpublish-a-site">公開機能は2025年にオープンベータとして開始</a>されたため、本件ではWordPressを安定運用の第一候補とする。</p>
+</blockquote>
+<h2>13. 必要素材と確認事項</h2>
+<h3>すでに揃っているもの</h3>
+<ul>
+<li>ロゴおよびロゴマーク画像</li>
+<li>ロゴマークを使用した背景デザイン</li>
+<li>4コースの2026年度パンフレット</li>
+<li>ハレルノート未記入用紙の画像</li>
+<li>LINE・InstagramのQRとリンク</li>
+<li>営業時間、アクセス、講師経歴、定員・残席情報</li>
+</ul>
+<h3>追加で必要なもの</h3>
+<table>
+<thead>
+<tr>
+<th>優先度</th>
+<th>素材・回答</th>
+<th>理由</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>高</td>
+<td>透過PNGまたはSVGの正式ロゴ</td>
+<td>色付き背景やヘッダーで綺麗に表示するため</td>
+</tr>
+<tr>
+<td>高</td>
+<td>教室外観、入口、教室内、自習席の写真</td>
+<td>初めての保護者の不安を減らすため</td>
+</tr>
+<tr>
+<td>高</td>
+<td>講師3名のプロフィール写真と短い教育観</td>
+<td>人への信頼をつくるため</td>
+</tr>
+<tr>
+<td>高</td>
+<td>年間カレンダー、休校日データ</td>
+<td>授業日・休校日の誤解を防ぐため</td>
+</tr>
+<tr>
+<td>中</td>
+<td>小学生料金表の正式なコース名と組み合わせ</td>
+<td>現在の原資料だけでは料金行との対応を確定できないため</td>
+</tr>
+<tr>
+<td>中</td>
+<td>駐車場の利用ルールと案内文</td>
+<td>「駐車場あり」の誤解を避けるため</td>
+</tr>
+<tr>
+<td>中</td>
+<td>生徒・保護者の声と掲載許諾</td>
+<td>第三者評価を追加するため</td>
+</tr>
+</tbody></table>
+<h2>14. 制作の進め方</h2>
+<table>
+<thead>
+<tr>
+<th>段階</th>
+<th>内容</th>
+<th>主な確認物</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>1. 情報確定</td>
+<td>未確定事項と素材を回収</td>
+<td>料金、時間割、カレンダー、写真</td>
+</tr>
+<tr>
+<td>2. 構成設計</td>
+<td>ページ構成と文章の優先順位を確定</td>
+<td>サイトマップ、トップ構成</td>
+</tr>
+<tr>
+<td>3. デザイン</td>
+<td>スマホ基準で主要画面を作成</td>
+<td>トップ、コース、問い合わせ</td>
+</tr>
+<tr>
+<td>4. 実装</td>
+<td>表示・更新・問い合わせ機能を構築</td>
+<td>テストサイト</td>
+</tr>
+<tr>
+<td>5. 確認・公開</td>
+<td>文章、リンク、スマホ表示を最終確認</td>
+<td>公開版サイト</td>
+</tr>
+</tbody></table>
+<h3>次回打ち合わせで決めたいこと</h3>
+<ol>
+<li>音声から整理した教育方針の文章を、この表現で公開してよいか</li>
+<li>WordPress採用と、Figmaをデザイン確認に使用する進め方でよいか</li>
+<li>料金をどこまで公開するか</li>
+<li>残席を実数表示するか、3段階表示にするか</li>
+<li>写真撮影の対象と日程</li>
+<li>WordPressの保守担当、保守費用、更新担当者のアカウント</li>
+</ol>
+<blockquote>
+<p>本書は、サイト制作の方向性をそろえるための初稿です。制作費、公開日、保守範囲は、ページ数・更新方法・必要機能の合意後に別途確定します。</p>
+</blockquote>
+<hr>
+<p><strong>調査・確認元：</strong> 公式Instagram、2026年度パンフレット4種、2026年9月1日打ち合わせ音声・文字起こし、提供された参考サイト、WordPress公式ドキュメント、Figma公式ヘルプ</p>
+</main></div>
+<a class="backtop" href="#top" aria-label="ページ先頭へ戻る">↑</a>
+</body>
+</html>
