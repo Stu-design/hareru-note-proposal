@@ -460,7 +460,10 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;
 </ul>
 <h2>12. システム・機能要件</h2>
 <h3>採用方針</h3>
-<p><strong>公開サイトと更新基盤にはWordPressを採用する方針を推奨する。</strong> デザイン検討には必要に応じてFigmaを使い、承認後にWordPressへ実装する。</p>
+<p><strong>公開サイトと更新基盤にはWordPressを採用する。</strong> 制作・改修はCodexで行い、GitHubで変更履歴を管理したうえでWordPressへ反映する。デザイン検討には必要に応じてFigmaを使う。</p>
+<h3>制作・反映フロー</h3>
+<p><strong>Codexで制作・修正 → GitHubへ保存 → テスト環境のWordPressへ反映 → 確認後に本番WordPressへ反映</strong></p>
+<p>本番サイトをCodexから直接変更せず、GitHubに確定した制作データと変更履歴を残す。公開後の日常的な新着情報は、この制作フローを通さず、塾側がWordPress管理画面から追加する。</p>
 <table>
 <thead>
 <tr>
@@ -496,8 +499,8 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;
 </tr>
 </thead>
 <tbody><tr>
-<td>お知らせ・ニュース</td>
-<td>「新規追加」から入力して公開</td>
+<td>新着情報</td>
+<td>WordPress管理画面の「新着情報 → 新規追加」から入力して公開</td>
 <td>タイトル、本文、公開日、カテゴリ、任意の画像</td>
 </tr>
 <tr>
@@ -511,7 +514,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;
 <td>対象期間、更新日、添付ファイル</td>
 </tr>
 </tbody></table>
-<p>お知らせカテゴリは、初期値として「お知らせ」「募集状況」「講習」「休校・日程」を設定する。コメント機能は使わない。</p>
+<p>新着情報の投稿・更新担当は塾側とする。カテゴリは、初期値として「お知らせ」「募集状況」「講習」「休校・日程」を設定する。コメント機能は使わない。更新担当者には記事投稿に必要な権限のみを付与し、テーマやプラグインの変更権限は持たせない。</p>
 <h3>必須機能</h3>
 <ul>
 <li>5つの固定ページと、お知らせ一覧・詳細</li>
@@ -627,7 +630,6 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;
 <h3>次回打ち合わせで決めたいこと</h3>
 <ol>
 <li>音声から整理した教育方針の文章を、この表現で公開してよいか</li>
-<li>WordPress採用と、Figmaをデザイン確認に使用する進め方でよいか</li>
 <li>料金をどこまで公開するか</li>
 <li>残席を実数表示するか、3段階表示にするか</li>
 <li>写真撮影の対象と日程</li>
