@@ -537,7 +537,98 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;
 <blockquote>
 <p>参考：<a href="https://wordpress.org/documentation/article/posts-screen/">WordPress公式「投稿管理」</a>では投稿の作成・編集・分類、<a href="https://wordpress.org/documentation/article/roles-and-capabilities/">WordPress公式「権限」</a>では管理者・編集者などの役割分けが案内されている。<a href="https://help.figma.com/hc/en-us/articles/35995403973783-Guide-to-Figma-Sites-CMS">Figma公式「Sites CMS」</a>にも記事管理機能はあるが、<a href="https://help.figma.com/hc/en-us/articles/31242845959703-Publish-update-or-unpublish-a-site">公開機能は2025年にオープンベータとして開始</a>されたため、本件ではWordPressを安定運用の第一候補とする。</p>
 </blockquote>
-<h2>13. 必要素材と確認事項</h2>
+<h2>13. SEO要件</h2>
+<h3>基本方針</h3>
+<p>SEOは検索順位だけを目的とせず、<strong>熊本市中央区・神水周辺で、小学生・中学生・高校生の塾を探す保護者が、必要なページへ直接たどり着ける状態</strong>をつくる。</p>
+<ul>
+<li>地域軸：熊本市中央区、神水、神水交差点、八丁馬場</li>
+<li>対象軸：小学生、中学1・2年生、中学3年生、高校生</li>
+<li>ニーズ軸：学習習慣、部活との両立、高校受験、自習環境、5教科指導</li>
+<li>ブランド軸：ハレルノートスクール、学ぶ力、自己決定力</li>
+</ul>
+<p>これらは文章として自然に必要な場所へ使用し、検索語句の不自然な反復や、実態のない地域名・サービス名の追加は行わない。公開後はGoogle Search Consoleの実データを基に見直す。</p>
+<h3>ページごとの検索意図</h3>
+<table>
+<thead>
+<tr>
+<th>ページ</th>
+<th>主な検索意図</th>
+<th>title案</th>
+</tr>
+</thead>
+<tbody><tr>
+<td>トップ</td>
+<td>熊本市中央区・神水で塾を探している</td>
+<td>熊本市中央区神水の学習塾｜ハレルノートスクール</td>
+</tr>
+<tr>
+<td>小学生</td>
+<td>神水周辺で小学生向けの塾を探している</td>
+<td>小学生コース｜熊本市中央区神水のハレルノートスクール</td>
+</tr>
+<tr>
+<td>中学1・2年生</td>
+<td>2教科／5教科、部活と両立できる塾を比較している</td>
+<td>中学1・2年生コース｜2教科・5教科｜ハレルノートスクール</td>
+</tr>
+<tr>
+<td>中学3年生</td>
+<td>熊本で高校受験・5教科指導の塾を探している</td>
+<td>中学3年生・高校受験コース｜熊本市中央区神水の学習塾</td>
+</tr>
+<tr>
+<td>高校生</td>
+<td>神水周辺で高校生の学習環境・自習室を探している</td>
+<td>高校生コース｜自律学習と個別サポート｜ハレルノートスクール</td>
+</tr>
+</tbody></table>
+<p>titleと見出しはページごとに固有にし、内容を正確かつ簡潔に表す。meta descriptionも各ページの内容に合わせて個別作成する。最終文言は料金・時間割・指導内容の確定後に調整する。</p>
+<h3>コンテンツ要件</h3>
+<ul>
+<li>各コースページに、対象学年、教科、指導形式、時間割、料金、よくある質問、LINE導線を掲載する</li>
+<li>トップページに、所在地、営業時間、電話番号、最寄り駅・バス停をテキストで明記する</li>
+<li>教育方針を抽象的な理念だけで終わらせず、チェックテストやハレルノートなど実際の取り組みで説明する</li>
+<li>教室・講師写真には内容を説明する代替テキストを設定する</li>
+<li>新着情報は塾側が更新し、募集状況、講習、休校・日程など検索者に必要な一次情報を蓄積する</li>
+<li>同じ文章を複数ページへ大量に複製しない</li>
+</ul>
+<h3>技術要件</h3>
+<ul>
+<li>ページごとに固有のtitle、meta description、H1を設定</li>
+<li>読みやすいURLを設定（例：<code>/elementary/</code>、<code>/junior-high-1-2/</code>）</li>
+<li>canonical URLを設定し、同一内容の重複登録を防止</li>
+<li>XMLサイトマップをWordPressで自動生成し、Google Search Consoleへ登録</li>
+<li><code>robots.txt</code>を設定し、テスト環境は<code>noindex</code>、本番公開時に解除</li>
+<li>パンくずリストと内部リンクを設置</li>
+<li><code>LocalBusiness</code>構造化データに塾名、住所、電話、営業時間、URL、ロゴ、Instagramを設定</li>
+<li>構造化データは公開前にリッチリザルトテストで確認</li>
+<li>スマートフォン表示、画像容量、表示速度、レイアウトの安定性を確認</li>
+<li>HTTPS、404ページ、転送設定を整備</li>
+</ul>
+<h3>Googleサービスの設定</h3>
+<ol>
+<li>独自ドメイン確定後、Google Search Consoleで所有権を確認する</li>
+<li>XMLサイトマップを登録する</li>
+<li>公開した5ページをURL検査で確認する</li>
+<li>Googleビジネスプロフィールの塾名、住所、電話、営業時間、サイトURLを公式サイトと一致させる</li>
+<li>月1回、表示回数、クリック数、検索語句、掲載ページ、インデックス状況を確認する</li>
+</ol>
+<p>Googleのローカル検索は関連性、距離、知名度などを基に表示されるため、順位は保証しない。Googleマップの口コミ投稿を促す導線は今回の対象外とする。</p>
+<h3>公開時のAcceptance Criteria</h3>
+<ul>
+<li><input disabled="" type="checkbox"> 5ページすべてに固有のtitle、meta description、H1がある</li>
+<li><input disabled="" type="checkbox"> 住所・電話・営業時間がサイト内とGoogleビジネスプロフィールで一致している</li>
+<li><input disabled="" type="checkbox"> サイトマップが生成され、Search Consoleから読み取れる</li>
+<li><input disabled="" type="checkbox"> テスト環境の<code>noindex</code>が本番サイトから取り除かれている</li>
+<li><input disabled="" type="checkbox"> 構造化データに重大なエラーがない</li>
+<li><input disabled="" type="checkbox"> スマートフォンで主要コンテンツとLINE導線を利用できる</li>
+<li><input disabled="" type="checkbox"> 主要画像に適切な代替テキストがある</li>
+<li><input disabled="" type="checkbox"> 存在しないページが適切な404を返す</li>
+</ul>
+<blockquote>
+<p>参考：<a href="https://developers.google.com/search/docs/fundamentals/seo-starter-guide">Google SEOスターターガイド</a>、<a href="https://developers.google.com/search/docs/appearance/structured-data/local-business">ローカルビジネス構造化データ</a>、<a href="https://developers.google.com/search/docs/crawling-indexing/sitemaps/build-sitemap">サイトマップの作成と送信</a>、<a href="https://support.google.com/business/answer/7091">Googleビジネスプロフィールのローカル検索</a></p>
+</blockquote>
+<h2>14. 必要素材と確認事項</h2>
 <h3>すでに揃っているもの</h3>
 <ul>
 <li>ロゴおよびロゴマーク画像</li>
@@ -592,7 +683,7 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;
 <td>第三者評価を追加するため</td>
 </tr>
 </tbody></table>
-<h2>14. 制作の進め方</h2>
+<h2>15. 制作の進め方</h2>
 <table>
 <thead>
 <tr>
@@ -634,6 +725,8 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;
 <li>残席を実数表示するか、3段階表示にするか</li>
 <li>写真撮影の対象と日程</li>
 <li>WordPressの保守担当、保守費用、更新担当者のアカウント</li>
+<li>本番で使用する独自ドメイン</li>
+<li>Google Search ConsoleとGoogleビジネスプロフィールの管理アカウント</li>
 </ol>
 <blockquote>
 <p>本書は、サイト制作の方向性をそろえるための初稿です。制作費、公開日、保守範囲は、ページ数・更新方法・必要機能の合意後に別途確定します。</p>
