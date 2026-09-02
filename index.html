@@ -497,8 +497,9 @@ code{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef4f7;
 <h2>12. システム・機能要件</h2>
 <h3>採用方針</h3>
 <p><strong>公開サイトと更新基盤にはWordPressを採用する。</strong> 制作・改修はCodexで行い、GitHubで変更履歴を管理したうえでWordPressへ反映する。デザイン検討には必要に応じてFigmaを使う。</p>
+<p>Elementor等のページビルダーは使用せず、専用テーマを制作する。塾側はWordPress標準の編集画面から新着情報を投稿し、固定ページのレイアウトは変更しない運用とする。</p>
 <h3>制作・反映フロー</h3>
-<p><strong>Codexで制作・修正 → GitHubへ保存 → テスト環境のWordPressへ反映 → 確認後に本番WordPressへ反映</strong></p>
+<p><strong>Codexで制作・修正 → GitHubへ保存 → テスト環境のWordPressへ反映 → 確認後に本番WordPressへ手動反映</strong></p>
 <p>本番サイトをCodexから直接変更せず、GitHubに確定した制作データと変更履歴を残す。公開後の日常的な新着情報は、この制作フローを通さず、塾側がWordPress管理画面から追加する。</p>
 <table>
 <thead>
